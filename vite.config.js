@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   base: "./",
   build: {
-    outDir: "./docs", // More explicit relative path
+    outDir: "dist",
     sourcemap: true,
   },
 });
