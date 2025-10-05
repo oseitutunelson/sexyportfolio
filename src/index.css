@@ -1,0 +1,287 @@
+@import "tailwindcss";
+
+@theme {
+  /* for first section */
+
+  --color-carbon-mist: #121212;
+  --color-alpine-frost: #f5f5f7;
+  --color-silicon: #a1a1a6;
+  --color-blue-tint: #2997ff;
+  --color-metallic-gray: #7d7d81;
+
+  --color-hero-section: #dfc2df;
+
+  --color-vanilla-latte: #f3e5c3;
+  --color-dark-vanilla: #776858;
+  --color-expresso-brown: #574545;
+
+  --color-charcoal-gray: #2e2e2e;
+  --color-teal-forest: #174e4f;
+
+  --color-soft-sage: #abc8a2;
+  --color-deep-olive: #1a2417;
+
+  --color-lavender: #b39ddb;
+  --color-smoky: #c4bccf;
+
+  /* Font family definitions */
+  --font-zentry: "zentry", sans-serif;
+  --font-general: "general", sans-serif;
+  --font-circular-web: "circular-web", sans-serif;
+  --font-robert-medium: "robert-medium", sans-serif;
+  --font-robert-regular: "robert-regular", sans-serif;
+}
+
+/* global css */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%; /* Prevent adjustments of font size after orientation changes in iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for all elements */
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-steel-gray);
+  overflow-x: hidden;
+}
+
+@layer base {
+  @font-face {
+    font-family: "circular-web";
+    src: url("/fonts/circularweb-book.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "general";
+    src: url("/fonts/general.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-medium";
+    src: url("/fonts/robert-medium.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "robert-regular";
+    src: url("/fonts/robert-regular.woff2") format("woff2");
+  }
+
+  @font-face {
+    font-family: "zentry";
+    src: url("/fonts/zentry-regular.woff2") format("woff2");
+  }
+}
+
+@layer utilities {
+  .spline-wrapper canvas {
+    transform: scale(1.05); /* Scale slightly bigger to hide the logo */
+    transform-origin: bottom right; /* Focus scaling from the bottom-right corner */
+  }
+
+  /* Smaller squares (10px) */
+  .bg-graph-paper-sm {
+    background-image: linear-gradient(
+        to right,
+        var(--color-gray) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--color-gray) 1px, transparent 1px);
+    background-size: 10px 10px;
+    background-color: var(--color-mint-whisper);
+  }
+
+  /* Larger squares (40px) */
+  .bg-graph-paper-lg-hero {
+    background-image: linear-gradient(
+        to right,
+        var(--color-grayish) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--color-grayish) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-color: var(--color-deep-olive);
+  }
+
+  .bg-graph-paper-lg-about {
+    background-image: linear-gradient(
+        to right,
+        var(--color-desert-sand) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--color-desert-sand) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-color: var(--color-dark-blue);
+  }
+
+  /* Multiple grid sizes with different colors */
+  .bg-graph-paper-multi {
+    background-image: linear-gradient(
+        to right,
+        var(--color-dark-blue) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to bottom, var(--color-dark-blue) 1px, transparent 1px),
+      linear-gradient(
+        to right,
+        var(--color-desert-sand) 0.5px,
+        transparent 0.5px
+      ),
+      linear-gradient(
+        to bottom,
+        var(--color-desert-sand) 0.5px,
+        transparent 0.5px
+      );
+    background-size: 100px 100px, 100px 100px, 20px 20px, 20px 20px;
+    background-color: var(--color-vanilla-latte);
+  }
+
+  .variable-proximity {
+    font-family: "Roboto Flex", sans-serif;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@layer components {
+  .indicator-line {
+    height: var(--spacing-1, 4px); /* Added fallback */
+    width: var(--spacing-px, 2px); /* Added fallback */
+    border-radius: var(--rounded-full, 9999px); /* Added fallback */
+    background-color: var(--color-white, #fff); /* Added fallback */
+    transition-property: all;
+    transition-duration: var(--duration-200, 200ms); /* Added fallback */
+    transition-timing-function: var(
+      --ease-in-out,
+      ease-in-out
+    ); /* Added fallback */
+  }
+
+  .indicator-line.active {
+    animation: indicator-line 0.5s ease infinite;
+  }
+
+  .border-animate {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .border-animate::before {
+    content: "";
+    position: absolute;
+    inset: -2px; /* Expands beyond the button to make space for the border */
+    border-radius: 50%; /* Same as button */
+    padding: 4px; /* Border thickness */
+    background: conic-gradient(
+      rgb(225, 225, 53) 0deg,
+      orange 90deg,
+      red 180deg,
+      orange 270deg,
+      yellow 360deg
+    );
+  }
+}
+
+@utility border-hsla {
+  border: var(--border-DEFAULT, 1px solid); /* Added fallback */
+  border-color: rgb(255 255 255 / 0.2);
+}
+
+@utility nav-hover-btn {
+  position: relative;
+  margin-left: var(--spacing-10);
+  font-family: var(--font-general);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  color: var(--color-carbon-mist);
+  cursor: pointer;
+
+  &::after {
+    position: absolute;
+    bottom: -0.5px;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    transform-origin: bottom right;
+    transform: scaleX(0);
+    background-color: var(--color-alpine-frost);
+    transition-property: transform;
+    transition-duration: var(--duration-300);
+    transition-timing-function: cubic-bezier(0.65, 0.05, 0.36, 1);
+    content: "";
+  }
+
+  &:hover::after {
+    transform-origin: bottom left;
+    transform: scaleX(100%);
+  }
+
+  @variant dark {
+    &::after {
+      background-color: var(--color-white);
+    }
+  }
+}
+
+@utility floating-nav {
+  background-color: var(--color-silicon);
+  border-radius: var(--rounded-lg);
+  border: var(--border-DEFAULT);
+}
+
+@utility absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@utility special-font {
+  & b {
+    font-family: "Zentry";
+    font-feature-settings: "ss01" on;
+  }
+}
+
+@utility flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes indicator-line {
+  0% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
+  50% {
+    height: 16px;
+    transform: translateY(-4px);
+  }
+  100% {
+    height: 4px;
+    transform: translateY(-0px);
+  }
+}
