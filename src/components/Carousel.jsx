@@ -24,7 +24,7 @@ const projects = [
     title: "Campaigns - Crowd Funding Platform",
     description:
       "A crowdfunding platform built on the blockchain",
-    demoLink: "https://github.com/oseitutunelson/campaigns/",
+    demoLink: "https://campaigns-bice.vercel.app/",
     codeLink: "https://github.com/oseitutunelson/campaigns",
   },
   {
