@@ -126,7 +126,7 @@ const Hero = () => {
                   Contact:
                 </p>
                 <p className="text-lg sm:text-xl font-robert-medium text-carbon-mist">
-                  <a href="mailto:vishvjeet.rana7@gmail.com" target="_blank">
+                  <a href="mailto:oseitutunelson11@gmail.com" target="_blank">
                     oseitutunelson11@gmail.com
                   </a>
                 </p>
