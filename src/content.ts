@@ -8,6 +8,7 @@ export type Design = {
   image: string
   accent: string
   tags: string[]
+  credit?: string
 }
 
 export type Collection = {
@@ -21,7 +22,7 @@ export type Collection = {
 export const collections: Collection[] = [
   { slug: 'football-kits', title: 'Football Kits', status: 'live', emoji: '⚽', blurb: 'Concept kits, tracksuits and jackets for clubs around the world, designed in Adobe Illustrator.' },
   { slug: 'street-wear', title: 'Street Wear', status: 'live', emoji: '🧢', blurb: 'Hoodies, tees and denim with a graphic, everyday edge, drawn in Adobe Illustrator.' },
-  { slug: 'leather', title: 'Leather', status: 'soon', emoji: '🧥', blurb: 'Jackets, trousers and statement pieces in leather.' },
+  { slug: 'leather', title: 'Leather', status: 'live', emoji: '🧥', blurb: 'Leather and faux-leather jackets, tops, trousers and shorts, with lace and gold hardware details.' },
   { slug: 'womenswear', title: "Women's Wear", status: 'soon', emoji: '👗', blurb: 'Dresses, sets and everyday pieces for women.' },
   { slug: 'swimwear', title: 'Swimwear', status: 'soon', emoji: '👙', blurb: 'Swimsuits, bikinis and beach-ready looks.' },
 ]
@@ -43,6 +44,15 @@ export const designs: Design[] = [
   { slug: 'but-why-man-tee', title: 'Megaleios Tee', collection: 'street-wear', accent: '#7B4DFF', tags: ['Layered tee', 'Front & back'], blurb: 'A white tee layered over black sleeves with script lettering, a dragon mark on the chest and a short poem on the back.', image: '/designs/but-why-man-tee.webp' },
   { slug: 'no-receipts-tee', title: 'No Receipts Tee', collection: 'street-wear', accent: '#FF6B4A', tags: ['Graphic tee', 'Front & back'], blurb: 'A black boxy tee with a quiet "No Receipts" chest print and a full receipt graphic on the back.', image: '/designs/no-receipts-tee.webp' },
   { slug: 'wanted-tees', title: 'Wanted & No Sleep Tees', collection: 'street-wear', accent: '#FF2E93', tags: ['Graphic tees', 'Two designs'], blurb: 'Two white graphic tees: a red "Wanted" poster print and a bold "No Sleep. Just Motion." back print.', image: '/designs/wanted-tees.webp' },
+  { slug: 'megaleios-polo', title: 'Megaleios Polo Top', collection: 'street-wear', accent: '#3DB8FF', tags: ['Polo', 'Front & back'], credit: 'Sketched by @whyemmann', blurb: 'A navy polo with contrast black trim, the number 6 and 7 on the sleeves, a dragon mark and "Megaleios" script on the chest, and "Never Dying Average" along the back hem.', image: '/designs/megaleios-polo.webp' },
+  { slug: 'street-is-the-office', title: 'Street Is The Office Tee', collection: 'street-wear', accent: '#FF6B4A', tags: ['Graphic tee', 'Front & back'], blurb: 'A black oversized tee with a collaged street scene on the chest and subtle print details on the back.', image: '/designs/street-is-the-office.webp' },
+  { slug: 'bank-of-streets', title: 'Bank of Streets Graphic', collection: 'street-wear', accent: '#FF2E93', tags: ['Print artwork', 'Graphic'], blurb: 'The "Bank of Streets" ₵50 note artwork: hand-lettered numerals, a looping line drawing and serial-number type used as a print graphic.', image: '/designs/bank-of-streets.webp' },
+  // ---- Leather (TODO: edit titles and blurbs) ----
+  { slug: 'leather-top-pants', title: 'Leather Top & Pants', collection: 'leather', accent: '#FFC83D', tags: ['Co-ord set', 'Top, pants & jacket'], blurb: 'A brown leather co-ord: a sleeveless high-neck top with straight trousers, plus a cropped boxy jacket and mini skirt.', image: '/designs/leather-top-pants.webp' },
+  { slug: 'leather-jacket-ladies', title: "Ladies' Leather Jacket Set", collection: 'leather', accent: '#7B4DFF', tags: ['Jacket', 'Set with briefs & belt'], blurb: 'A fitted black jacket with lace panels and gold zip details, styled with matching briefs and a studded leather belt.', image: '/designs/leather-jacket-ladies.webp' },
+  { slug: 'leather-blouse-skirt', title: 'Leather Blouse & Skirt', collection: 'leather', accent: '#FF6B4A', tags: ['Top & skirt', 'Co-ord set'], blurb: 'A brown leather corset-style top with a black lace centre panel and tie sides, paired with a draped wrap skirt with stitched seams and snap tabs.', image: '/designs/leather-blouse-skirt.webp' },
+  { slug: 'lace-jacket-skirt-belt', title: 'Lace-up Jacket, Skirt & Belt', collection: 'leather', accent: '#7B4DFF', tags: ['Jacket, skirt & belt', 'Co-ord set'], blurb: 'A black off-shoulder jacket with criss-cross lacing down the front and on the cuffs, a long skirt with an open lace-up side, and a brown studded belt with a scalloped gold buckle.', image: '/designs/lace-jacket-skirt-belt.webp' },
+  { slug: 'faux-leather-lace-shorts', title: 'Faux Leather Lace Shorts', collection: 'leather', accent: '#FF2E93', tags: ['Shorts', 'Front & back'], blurb: 'Low-rise faux leather booty shorts with a lace-trimmed hem and a centre zip at the back.', image: '/designs/faux-leather-lace-shorts.webp' },
 ]
 
 // ---- Code projects ---------------------------------------------------------

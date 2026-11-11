@@ -250,3 +250,4 @@ fieldset { border: 3px dashed var(--aub); border-radius: 14px; margin: 0 0 1rem;
 .cs-img { max-width: 100%; height: auto; }
 .direct { font-weight: 700; margin: 0 0 1.4rem; word-break: break-word; }
 .direct a { color: var(--text); text-decoration: underline; text-decoration-color: var(--c1); text-decoration-thickness: 3px; text-underline-offset: 3px; }
+.credit { font-weight: 700; color: var(--c1); margin: .4rem 0; }

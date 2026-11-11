@@ -11,6 +11,7 @@ export default function Contact() {
     config.instagram && { label: 'Instagram', href: config.instagram },
     config.twitter && { label: 'X / Twitter', href: config.twitter },
     config.snapchat && { label: 'Snapchat', href: config.snapchat },
+    config.tiktok && { label: 'TikTok', href: config.tiktok },
     config.whatsapp && { label: 'WhatsApp', href: config.whatsapp },
     config.email && { label: 'Email', href: `mailto:${config.email}` },
   ].filter(Boolean) as { label: string; href: string }[]

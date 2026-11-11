@@ -15,11 +15,11 @@ export default function Simple() {
       <h2>Skills</h2>
       <ul className="chips">{skills.map(s => <li key={s.name} style={{ ['--chip' as string]: s.color }}>{s.name}</li>)}</ul>
       <h2>Fashion designs</h2>
-      <ul className="simple-grid">{designs.map(d => <li key={d.slug}><DesignArt d={d} className="art" /><b>{d.title}</b><br />{d.blurb}</li>)}</ul>
+      <ul className="simple-grid">{designs.map(d => <li key={d.slug}><DesignArt d={d} className="art" /><b>{d.title}</b><br />{d.blurb}{d.credit && <><br /><i>{d.credit}</i></>}</li>)}</ul>
       <h2>Code</h2>
       <ul>{projects.map(p => <li key={p.slug}><b>{p.title}</b> — {p.summary}</li>)}</ul>
       <h2>Contact</h2>
-      <p><a href={`https://github.com/${config.github}`}>GitHub @{config.github}</a> · <a href={`mailto:${config.email}`}>{config.email}</a> · <a href={`tel:+${config.phoneIntl}`}>{config.phone}</a> · <a href={config.whatsapp}>WhatsApp</a> · <a href={config.instagram}>Instagram</a> · <a href={config.twitter}>X / Twitter</a> · <a href={config.snapchat}>Snapchat</a> · <Link to="/contact">Message form</Link></p>
+      <p><a href={`https://github.com/${config.github}`}>GitHub @{config.github}</a> · <a href={`mailto:${config.email}`}>{config.email}</a> · <a href={`tel:+${config.phoneIntl}`}>{config.phone}</a> · <a href={config.whatsapp}>WhatsApp</a> · <a href={config.instagram}>Instagram</a> · <a href={config.twitter}>X / Twitter</a> · <a href={config.snapchat}>Snapchat</a> · <a href={config.tiktok}>TikTok</a> · <Link to="/contact">Message form</Link></p>
     </main>
   )
 }

@@ -43,7 +43,7 @@ export default function Gallery() {
   const pieces = designs.filter(d => d.collection === col)
 
   return (
-    <Room id="gallery" title={open ? open.title : 'Gallery'} description={open ? open.blurb : 'Football kit and street wear collections designed in Adobe Illustrator, plus full-stack projects built with Solidity, JavaScript and React.'}>
+    <Room id="gallery" title={open ? open.title : 'Gallery'} description={open ? open.blurb : 'Football kit, street wear and leather collections designed in Adobe Illustrator, plus full-stack projects built with Solidity, JavaScript and React.'}>
       <section className="gallery">
         <p className="eyebrow">The Gallery</p>
         <h1>Collections &amp; code</h1>
@@ -119,6 +119,7 @@ export default function Gallery() {
               <p className="eyebrow">{collections.find(c => c.slug === open.collection)?.title} · Adobe Illustrator</p>
               <h2>{open.title}</h2>
               <p>{open.blurb}</p>
+              {open.credit && <p className="credit">✏️ {open.credit}</p>}
               <p className="tags">{open.tags.map(t => <span key={t}>{t}</span>)}</p>
               <p className="row">
                 <button className="btn" onClick={() => { const list = designs.filter(d => d.collection === open.collection); close(); setBook({ list, i: list.indexOf(open) }); unlock('lookbook') }}>View in lookbook</button>
@@ -150,7 +151,7 @@ function Lookbook({ list, start, onClose }: { list: Design[]; start: number; onC
         <button className="nav-btn" onClick={prev} aria-label="Previous design">‹</button>
         <figure key={d.slug} className="page">
           <DesignArt d={d} className="art-xl" />
-          <figcaption><b>{d.title}</b><br /><small>{d.tags.join(' · ')}</small></figcaption>
+          <figcaption><b>{d.title}</b><br /><small>{d.tags.join(' · ')}{d.credit ? ' · ' + d.credit : ''}</small></figcaption>
         </figure>
         <button className="nav-btn" onClick={next} aria-label="Next design">›</button>
         <p className="count" aria-live="polite">{i + 1} / {list.length} · use ← → or swipe</p>

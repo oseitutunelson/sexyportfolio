@@ -25,7 +25,7 @@ export default function About() {
           <p>
             I'm <b>Sexy</b> — a fashion designer and full-stack developer. I sketch collections as vector
             illustrations in Adobe Illustrator, then build the tools, sites and smart contracts to show them to the world.
-            My collections so far are football kits and street wear; leather, womenswear and swimwear are next. My code is Solidity, JavaScript and React, from the interface to the server.
+            My collections so far are football kits, street wear and leather; womenswear and swimwear are next. My code is Solidity, JavaScript and React, from the interface to the server.
           </p>
           <p>I'm open to design commissions and freelance development. {/* TODO: add your location, education and awards here */}</p>
           <ul className="chips" aria-label="Skills">

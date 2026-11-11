@@ -9,6 +9,7 @@ export const config = {
   twitter: 'https://x.com/sexyprogrammer',
   instagram: 'https://instagram.com/sexy.programmer',
   snapchat: 'https://www.snapchat.com/add/otnelsonn',
+  tiktok: 'https://www.tiktok.com/@sexyprogrammer',
   linkedin: '',
   formEndpoint: '', // optional Formspree/Getform URL. Empty = opens the visitor's email app.
 }
